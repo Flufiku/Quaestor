@@ -47,8 +47,18 @@ API: FastAPI and Uvicorn
 - `GET /api/withdrawals/{withdrawal_id}`: Get a single withdrawal by ID.
 - `GET /api/withdrawals/{user_id}`: Get withdrawals made by a user by user ID.
 - `GET /api/withdrawals/{group_id}`: Get withdrawals associated with a group by group ID.
+- `GET /api/withdrawals/{tag_id}`: Get withdrawals associated with a tag by tag ID.
 - `GET /api/withdrawals/me`: Get the authenticated user's withdrawals.
 - `POST /api/withdrawals`: Create a withdrawal.
 - `PATCH /api/withdrawals/{withdrawal_id}`: Update part of a withdrawal.
 - `DELETE /api/withdrawals/{withdrawal_id}`: Delete a withdrawal.
 - `POST /api/withdrawals/me/pay/{withdrawal_id}`: Pay a withdrawal for the authenticated user.
+
+
+### Tags
+- `GET /api/tags`: List tags.
+- `GET /api/tags/{tag_id}`: Get a single tag by ID.
+- `GET /api/tags/{withdrawal_id}`: Get tags associated with a withdrawal by withdrawal ID.
+- `POST /api/tags`: Create a tag.
+- `PATCH /api/tags/{tag_id}`: Update part of a tag.
+- `DELETE /api/tags/{tag_id}`: Delete a tag.
