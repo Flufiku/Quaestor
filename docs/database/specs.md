@@ -63,4 +63,17 @@ TABLE withdrawals_users {
   FOREIGN KEY (withdrawal_id) REFERENCES withdrawals(id) ON DELETE CASCADE
   FOREIGN KEY (user_id) REFERENCES users(id) ON DELETE CASCADE
 }
+
+TABLE withdrawals_tags {
+  withdrawal_id INTEGER NOT NULL
+  tag_id INTEGER NOT NULL
+  PRIMARY KEY (withdrawal_id, tag_id)
+  FOREIGN KEY (withdrawal_id) REFERENCES withdrawals(id) ON DELETE CASCADE
+  FOREIGN KEY (tag_id) REFERENCES tags(id) ON DELETE CASCADE
+}
+
+TABLE tags {
+  id INTEGER PRIMARY KEY AUTOINCREMENT
+  name TEXT NOT NULL UNIQUE
+}
 ```
