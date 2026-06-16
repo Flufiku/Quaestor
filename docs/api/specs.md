@@ -4,7 +4,7 @@ API: FastAPI and Uvicorn
 
 ## API Endpoints
 
-## Login and Registration
+### Login and Registration
 
 - `POST /api/auth/register`: Register a new user.
 - `POST /api/auth/login`: Authenticate a user and return a JWT token.
@@ -54,11 +54,30 @@ API: FastAPI and Uvicorn
 - `DELETE /api/withdrawals/{withdrawal_id}`: Delete a withdrawal.
 - `POST /api/withdrawals/me/pay/{withdrawal_id}`: Pay a withdrawal for the authenticated user.
 
-
 ### Tags
+
 - `GET /api/tags`: List tags.
 - `GET /api/tags/{tag_id}`: Get a single tag by ID.
 - `GET /api/tags/{withdrawal_id}`: Get tags associated with a withdrawal by withdrawal ID.
 - `POST /api/tags`: Create a tag.
 - `PATCH /api/tags/{tag_id}`: Update part of a tag.
 - `DELETE /api/tags/{tag_id}`: Delete a tag.
+
+### Linking
+
+#### User-Group Linking
+- `POST /api/link/user-group`: Link a user to a group.
+- `DELETE /api/link/user-group`: Unlink a user from a group.
+
+#### Withdrawal-Group Linking
+- `POST /api/link/withdrawal-group`: Link a withdrawal to a group, and also all users of a group.
+- `DELETE /api/link/withdrawal-group`: Unlink a withdrawal from a group, and also all users of a group.
+
+#### Withdrawal-User Linking
+- `POST /api/link/withdrawal-user`: Link a withdrawal to a user (unpaid by default).
+- `PATCH /api/link/withdrawal-user/{withdrawal_user_id}`: Update the status of a withdrawal for a user (e.g., mark as paid).
+- `DELETE /api/link/withdrawal-user`: Unlink a withdrawal from a user.
+
+#### Withdrawal-Tag Linking
+- `POST /api/link/withdrawal-tag`: Link a withdrawal to a tag.
+- `DELETE /api/link/withdrawal-tag`: Unlink a withdrawal from a tag.
