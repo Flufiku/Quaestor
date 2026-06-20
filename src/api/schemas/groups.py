@@ -1,0 +1,22 @@
+from datetime import datetime
+
+from pydantic import BaseModel, ConfigDict
+
+
+class GroupCreate(BaseModel):
+    name: str
+    description: str | None = None
+
+
+class GroupUpdate(BaseModel):
+    name: str | None = None
+    description: str | None = None
+
+
+class GroupRead(BaseModel):
+    id: int
+    name: str
+    description: str | None = None
+    created_at: datetime | None = None
+
+    model_config = ConfigDict(from_attributes=True)
